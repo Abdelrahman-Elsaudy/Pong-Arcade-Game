@@ -4,7 +4,7 @@
 
 - The famous multi-player game in which two opposite boards are bouncing a ball between them to score goals.
 
-![turtle_screenshot_1](https://github.com/Abdelrahman-Elsaudy/Turtle-Crossing-Game/assets/158151388/8c30fcd1-1d26-4ce5-b4be-18ee9e62b699)
+![pong_screenshot](https://github.com/Abdelrahman-Elsaudy/Pong-Arcade-Game/assets/158151388/f4f0b2e1-aa7b-4df1-a66d-2f2468a64bb2)
 ---
 
 ## Applied Skills:
