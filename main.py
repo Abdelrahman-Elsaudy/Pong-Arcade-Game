@@ -9,6 +9,7 @@ from score import Score
 
 screen = Screen()
 screen.setup(600, 600)
+screen.title("Pong")
 screen.bgcolor("black")
 screen.listen()
 screen.tracer(0)
@@ -32,23 +33,28 @@ while game_on:
     scoring_left.display_left()
     scoring_right.display_right()
     game_ball.move(main, second)
-    time.sleep(0.02)
+    time.sleep(0.03)
 
-    if game_ball.ycor() >= 270:               # hitting borders changes the up/down direction but keeps the east/west.
+    # When the ball hits up or down borders it changes its main direction (up/down).
+    if game_ball.ycor() >= 270:
         main = 270
     elif game_ball.ycor() <= -270:
         main = 90
 
-    if game_ball.distance(board.right) < 30:   # hitting the boards keeps the up/down direction but changes east/west
-        second = game_ball.heading() + 180
+    # When the ball hits right or left boards it changes its secondary direction (east/west).
+    if game_ball.distance(board.right) < 30:
+        second = 180
     elif game_ball.distance(board.left) < 30:
-        second = game_ball.heading() - 180
+        second = 0
 
+    # Scoring against the right board.
     if game_ball.xcor() >= 280:
         scoring_left.score_left()
         game_ball.goto(0, 0)
         main = 90
         second = 180
+
+    # Scoring against the left board.
     elif game_ball.xcor() <= -280:
         scoring_right.score_right()
         game_ball.goto(0, 0)

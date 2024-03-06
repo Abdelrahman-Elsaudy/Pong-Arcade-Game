@@ -1,7 +1,5 @@
 from turtle import Turtle
 
-BALL_STEP = 10
-
 
 class Score(Turtle):
     def __init__(self):
